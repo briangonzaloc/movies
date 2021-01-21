@@ -17,6 +17,23 @@ const theme = {
 			xs: '12px'
 		}
 	},
+	header: {
+		colors: {
+			background: '#FFFFFF',
+			border: '#EFF0F2'
+		}
+	},
+	searchBox: {
+		font: {
+			sizes: {
+				lg: '20px',
+				sm: '16px',
+				xs: '14px'
+			},
+			color: '#505050',
+			family: 'Roboto'
+		}
+	},
 }
 
 const Theme = ({children}) => (
