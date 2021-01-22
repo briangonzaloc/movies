@@ -4,10 +4,16 @@ import createSagaMiddleware from 'redux-saga';
 import { all } from 'redux-saga/effects';
 import { createBrowserHistory } from 'history';
 
+import movies from '../redux/movies/reducer';
+
+import moviesSagas from '../redux/movies/sagas';
+
+
 export const history = createBrowserHistory();
 const sagaMiddleware = createSagaMiddleware();
 
 const rootReducer = combineReducers({
+	movies,
 	router: connectRouter(history)
 });
 
@@ -21,7 +27,9 @@ export const store = createStore(
 );
 
 export function* rootSagas() {
-	yield all([]);
+	yield all([
+		moviesSagas()
+	]);
 }
 
 sagaMiddleware.run(rootSagas);

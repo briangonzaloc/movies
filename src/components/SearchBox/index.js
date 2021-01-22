@@ -1,10 +1,17 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
+import { connect } from 'react-redux';
 import { StyledSearchBox, Span, StyledIcon, Input } from './styles';
 import SearchIcon from '../Icons/Search';
+import { getMovies } from '../../redux/movies/actions';
 
-const SearchBox = () => {
+const SearchBox = ({getMovies}) => {
   const [ search, setSearch ] = useState('');
   const searchData = () => {}
+
+  useEffect(()=>{
+    getMovies();
+    console.log('aaaaaaaaaaaaas')
+  }, [])
   
   return (
     <StyledSearchBox>
@@ -29,4 +36,8 @@ const SearchBox = () => {
   )
 };
 
-export default SearchBox;
+const mapDispatchToProps = dispatch => ({
+  getMovies: payload => getMovies(dispatch, payload)
+})
+
+export default connect(null, mapDispatchToProps)(SearchBox);
