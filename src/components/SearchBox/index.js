@@ -10,7 +10,15 @@ const SearchBox = ({getMovies}) => {
 
   useEffect(()=>{
     getMovies();
-  }, [getMovies])
+	}, [getMovies])
+	
+	useEffect(()=>{
+		let params;
+		if( search.length){
+			params = {query: search};
+		}
+		getMovies(params);
+	}, [search, getMovies])
   
   return (
     <StyledSearchBox>
@@ -20,7 +28,7 @@ const SearchBox = ({getMovies}) => {
 				</StyledIcon>
 				<Input
 					value={search}
-					placeholder="Buscar"
+					placeholder="Search"
 					onChange={e => {
 						setSearch(e.target.value)
 					}}

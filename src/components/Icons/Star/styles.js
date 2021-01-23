@@ -7,10 +7,10 @@ export const Svg = styled.svg`
 	fill: transparent;
 	stroke: ${props => props.color || props.theme.font.colors.dark};
   padding-right: 5px;
+	fill: ${ props => props.selected ? '#ff0' : '#FFF'};
 
 	&:hover {
 		cursor: pointer;
-		fill: ${props => props.color || '#ff0'};
 	}
 
     @media ${Device.xs}{

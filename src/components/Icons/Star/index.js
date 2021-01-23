@@ -2,12 +2,13 @@ import React from 'react'
 import { Svg } from './styles';
 import PropTypes from 'prop-types'
 
-const Star = ({color, size, onClick}) => {
+const Star = ({color, size, onClick, selected}) => {
 	return (
 		<Svg
 			onClick={onClick}
 			color={color}
 			size={size}
+			selected={selected}
 			xmlns="http://www.w3.org/2000/Styles"
 			viewBox="0 0 24 24"
 		>
