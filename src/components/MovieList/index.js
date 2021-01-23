@@ -8,7 +8,15 @@ const MovieList = ({movies}) => {
 
   const renderCards = () => {
     return movies.map((movie, index) => (
-      <MovieCard imageUrl={`https://image.tmdb.org/t/p/original${movie.poster_path}`} title={movie.title} key={index}/>
+      <MovieCard 
+        key={index}
+        imageUrl={`${process.env.REACT_APP_IMAGE_URL}${movie.poster_path}`} 
+        title={movie.title} 
+        overview={movie.overview}
+        releaseDate={movie.release_date}
+        backdropPath={`${process.env.REACT_APP_IMAGE_URL}${movie.backdrop_path}`}
+        voteAverage={movie.vote_average}
+      />
     ))
   }
   
