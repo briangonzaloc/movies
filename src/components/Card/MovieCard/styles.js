@@ -6,6 +6,9 @@ export const Card = styled.div`
 	position: relative;
 	margin: 10px;
 	width: 256px;
+  &:hover {
+		cursor: pointer;
+	}
 `;
 
 export const ImageBackground = styled.div`

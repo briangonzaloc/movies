@@ -22,5 +22,6 @@ export default Star
 Star.propTypes = {
 	color: PropTypes.string,
 	size: PropTypes.string,
-	onClick: PropTypes.func
+	onClick: PropTypes.func,
+	selected: PropTypes.bool
 }
