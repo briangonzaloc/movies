@@ -3,8 +3,9 @@ import { connect } from 'react-redux';
 import { StyledSearchBox, Span, StyledIcon, Input } from './styles';
 import SearchIcon from '../Icons/Search';
 import { getMovies } from '../../redux/movies/actions';
+import { resetStars } from '../../redux/stars/actions';
 
-const SearchBox = ({getMovies}) => {
+const SearchBox = ({getMovies, resetStars}) => {
   const [ search, setSearch ] = useState('');
   const searchData = () => {}
 
@@ -18,7 +19,8 @@ const SearchBox = ({getMovies}) => {
 			params = {query: search};
 		}
 		getMovies(params);
-	}, [search, getMovies])
+		resetStars(true)
+	}, [search, getMovies, resetStars])
   
   return (
     <StyledSearchBox>
@@ -44,7 +46,8 @@ const SearchBox = ({getMovies}) => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  getMovies: payload => getMovies(dispatch, payload)
+	getMovies: payload => getMovies(dispatch, payload),
+	resetStars: payload => resetStars(dispatch, payload)
 })
 
 export default connect(null, mapDispatchToProps)(SearchBox);

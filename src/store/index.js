@@ -5,6 +5,7 @@ import { all } from 'redux-saga/effects';
 import { createBrowserHistory } from 'history';
 
 import movies from '../redux/movies/reducer';
+import stars from '../redux/stars/reducer';
 
 import moviesSagas from '../redux/movies/sagas';
 
@@ -14,6 +15,7 @@ const sagaMiddleware = createSagaMiddleware();
 
 const rootReducer = combineReducers({
 	movies,
+	stars,
 	router: connectRouter(history)
 });
 

@@ -1,1 +1,1 @@
-export const movies = state => state.movies.data;
+export const movies = state => state.movies.dataToShow;
