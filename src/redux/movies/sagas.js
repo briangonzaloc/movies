@@ -5,9 +5,14 @@ import { getRecomendedMovies } from '../../api/movies';
 function * fetchMovies() {
   try{
     const response = yield call(getRecomendedMovies);
-    console.log('response', response)
+    if( response.status === 200 ){
+      const movies = yield response.json();
+      yield put({type: GET_MOVIES_SUCCESS, payload: movies.results});
+    }else{
+      yield put({type: GET_MOVIES_FAILED, payload: 'Error'});
+    }
   }catch(e){
-    yield put({type: GET_MOVIES_FAILED, payload: {}})
+    yield put({type: GET_MOVIES_FAILED, payload: 'Error'});
   }
 }
 

@@ -10,8 +10,7 @@ const SearchBox = ({getMovies}) => {
 
   useEffect(()=>{
     getMovies();
-    console.log('aaaaaaaaaaaaas')
-  }, [])
+  }, [getMovies])
   
   return (
     <StyledSearchBox>

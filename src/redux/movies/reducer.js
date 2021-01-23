@@ -25,7 +25,7 @@ export default function movies(state = initialState, action) {
 		case GET_MOVIES_SUCCESS:
 			return {
 				...state,
-				data: action.payload.data,
+				data: action.payload,
 				loading: false,
 				success: true,
 			};
