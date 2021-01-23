@@ -2,8 +2,16 @@ import styled from 'styled-components'
 import Device from '../../commons/Device';
 
 export const StyledSearchBox = styled.div`
-  width: 75%;
+  width: 70%;
 	height: 80%;
+  padding-left: 40px;
+  box-sizing: border-box;
+
+  @media ${Device.xs} {
+		& {
+			padding-left: 5px;
+		}
+  }
 `
 
 export const Span = styled.span`

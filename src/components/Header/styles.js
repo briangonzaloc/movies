@@ -3,6 +3,7 @@ import styled from 'styled-components'
 export const HeaderContainer = styled.header`
   display: flex;
 	align-items: center;
+	justify-content: space-between;
 	flex-flow: row wrap;
 	min-height: 38px;
 	border-bottom: 3px ${props => props.theme.header.colors.border} solid;

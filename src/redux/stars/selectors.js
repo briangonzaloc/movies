@@ -1,0 +1,1 @@
+export const resetedStars = state => state.stars.resetStars;
